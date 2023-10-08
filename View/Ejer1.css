@@ -1,0 +1,36 @@
+body {
+    background: #000000;
+}
+
+.card {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    border: 2px solid #ff0077; /* Cambia el color del borde a rosado */
+}
+
+.card h1 {
+    color:#ff0077;
+}
+
+.card p {
+    color: #555;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #ff0077;
+}
