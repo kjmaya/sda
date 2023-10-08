@@ -18,6 +18,11 @@
                 $base = $_POST['base'];
                 $resultado = ($base * $altura) / 2;
                 break;
+            case 'rectangulo':
+                $altura = $_POST['altura'];
+                $base = $_POST['base'];
+                $resultado = $base * $altura;
+                break;
         }
         
         $_SESSION['resultado'] = $resultado;
@@ -46,6 +51,9 @@
             <label class="radio-label">
                 <input type="radio" name="figura" value="triangulo"> Triangulo
             </label>
+             <label class="radio-label">
+                <input type="radio" name="figura" value="rectangulo"> Rectangulo
+            </label>
             <br />
             <label for="radio">Radio</label>
             <input type="number" id="radio" name="radio" />
@@ -68,6 +76,7 @@
 
             ?>
         </form>
+        <a href="../index.html" class="btn">Volver</a>
     </div>
 
 </body>
