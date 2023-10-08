@@ -75,9 +75,9 @@
             }
 
             ?>
+              <a href="../index.html" class="btn">Volver</a>
         </form>
-        <a href="../index.html" class="btn">Volver</a>
-    </div>
+      </div>
 
 </body>
 
