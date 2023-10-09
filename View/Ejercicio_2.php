@@ -83,7 +83,7 @@ function validarNumero($valor)
             <?php endif; ?>
 
             <br />
-            <input type="submit">
+            <input type="submit" class="btn_enviar">
             <?php
             if (isset($_SESSION['resultado'])) {
                 echo 'El resultado es ' . $_SESSION['resultado'];

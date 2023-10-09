@@ -1,0 +1,58 @@
+/* Estilos del contenedor principal */
+.container {
+    max-width: 400px;
+    /* Ajusta el ancho según tus preferencias */
+    margin: 0 auto;
+    /* Centra el contenedor en la página */
+    padding: 20px;
+    /* Agrega espaciado alrededor del contenido */
+    text-align: center;
+    /* Centra el contenido del contenedor */
+    background-color: #f5f5f5;
+    /* Color de fondo del contenedor */
+    border: 1px solid #ccc;
+    /* Borde del contenedor */
+    border-radius: 10px;
+    /* Bordes redondeados del contenedor */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /* Sombra del contenedor */
+}
+
+/* Estilos para el formulario */
+.formulario {
+    margin-bottom: 20px;
+    /* Espacio inferior entre el formulario y el enlace de Volver */
+}
+
+/* Estilos para el enlace Volver */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #ff0077;
+}
+
+.btn_enviar {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn_enviar:hover {
+    background-color: #45a049;
+}
+
+.btn_enviar:active {
+    background-color: #3e8e41;
+}

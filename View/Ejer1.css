@@ -1,36 +1,43 @@
 body {
-    background: #000000;
+    background: #ffffff;
+    font-family: Arial, sans-serif;
 }
 
 .card {
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-    border: 2px solid #ff0077; /* Cambia el color del borde a rosado */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db; /* Cambia el color del borde a azul */
 }
 
 .card h1 {
-    color:#ff0077;
+    color: #3498db;
+    font-size: 24px;
+    margin-bottom: 15px;
 }
 
 .card p {
-    color: #555;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .btn {
+    margin-top: 10px;
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #000000;
+    padding: 15px 30px;
+    background-color: #3498db; /* Cambia el color de fondo a azul */
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 25px;
     transition: background-color 0.3s ease-in-out;
+    font-weight: bold;
 }
 
 .btn:hover {
-    background-color: #ff0077;
+    background-color: #ae00da; /* Cambia el color de fondo al rosado al pasar el ratón */
 }
