@@ -11,11 +11,11 @@ body {
     max-width: 800px;
     margin: 20px auto;
     text-align: center;
-    border: 2px solid #3498db; /* Cambia el color del borde a azul */
+    border: 2px solid #ffd728; /* Cambia el color del borde a azul */
 }
 
 .card h1 {
-    color: #3498db;
+    color: #ffd728;
     font-size: 24px;
     margin-bottom: 15px;
 }
@@ -30,7 +30,7 @@ body {
     margin-top: 10px;
     display: inline-block;
     padding: 15px 30px;
-    background-color: #3498db; /* Cambia el color de fondo a azul */
+    background-color: #ffd728; /* Cambia el color de fondo a azul */
     color: #fff;
     text-decoration: none;
     border-radius: 25px;

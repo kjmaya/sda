@@ -6,7 +6,7 @@
     <title>Calculadora de Promedio</title>
 </head>
 <body>
-    <div class="container"> <!-- Contenedor principal -->
+    <div class="container card"> <!-- Contenedor principal -->
         <form class="formulario" method="post" action="calcular_promedio.php">
             <label for="materia">Nombre de la materia:</label>
             <input type="text" name="materia" required><br>

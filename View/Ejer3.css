@@ -24,25 +24,49 @@
     /* Espacio inferior entre el formulario y el enlace de Volver */
 }
 
+.card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    text-align: center;
+    border: 2px solid #ffd728; /* Yellow border */
+}
+
+.card h1 {
+    color: #ffd728;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
 /* Estilos para el enlace Volver */
 .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #3498db;
+    padding: 15px 30px;
+    background-color: #ffd728;
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 25px;
     transition: background-color 0.3s ease-in-out;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
 }
 
 .btn:hover {
-    background-color: #ff0077;
+    background-color: #ae00da;
 }
 
 .btn_enviar {
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #ff5101;
     color: white;
     border: none;
     border-radius: 5px;
@@ -50,9 +74,13 @@
 }
 
 .btn_enviar:hover {
-    background-color: #45a049;
+    background-color: #7809ff;
 }
 
 .btn_enviar:active {
     background-color: #3e8e41;
+}
+
+body {
+    text-align: center; /* Alinea todo el contenido en el centro horizontalmente */
 }

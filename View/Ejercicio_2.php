@@ -52,7 +52,7 @@ function validarNumero($valor)
 </head>
 
 <body>
-    <div class="container">
+    <div class="container card">
         <form action="" method="post">
             <label class="radio-label">
                 <input type="radio" name="figura" value="circulo" <?php echo ($figura === 'circulo') ? 'checked' : ''; ?>> Circulo

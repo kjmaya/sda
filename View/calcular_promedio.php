@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Generar Campos</title>
+    <link rel="stylesheet" href="prom.css">
 </head>
 <body>
-    <form method="post" action="mostrar_resultado.php">
+    <form class="card" method="post" action="mostrar_resultado.php">
         <?php
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $materia = $_POST['materia'];
@@ -28,7 +29,4 @@
     </form>
 </body>
 </html>
-
-
-
 
