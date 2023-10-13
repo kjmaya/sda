@@ -53,45 +53,46 @@ function validarNumero($valor)
 
 <body>
     <div class="container card">
-        <form action="" method="post">
-            <label class="radio-label">
-                <input type="radio" name="figura" value="circulo" <?php echo ($figura === 'circulo') ? 'checked' : ''; ?>> Circulo
-            </label>
-            <label class="radio-label">
-                <input type="radio" name="figura" value="cuadrado" <?php echo ($figura === 'cuadrado') ? 'checked' : ''; ?>> Cuadrado
-            </label>
-            <label class="radio-label">
-                <input type="radio" name="figura" value="triangulo" <?php echo ($figura === 'triangulo') ? 'checked' : ''; ?>> Triangulo
-            </label>
-            <label class="radio-label">
-                <input type="radio" name="figura" value="rectangulo" <?php echo ($figura === 'rectangulo') ? 'checked' : ''; ?>> Rectangulo
-            </label>
-            <br />
+     
+<form action="" method="post">
+    <label class="radio-label">
+        <input type="radio" name="figura" value="circulo" <?php echo ($figura === 'circulo') ? 'checked' : ''; ?>> Círculo
+    </label>
+    <label class="radio-label">
+        <input type="radio" name="figura" value="cuadrado" <?php echo ($figura === 'cuadrado') ? 'checked' : ''; ?>> Cuadrado
+    </label>
+    <label class="radio-label">
+        <input type="radio" name="figura" value="triangulo" <?php echo ($figura === 'triangulo') ? 'checked' : ''; ?>> Triángulo
+    </label>
+    <label class="radio-label">
+        <input type="radio" name="figura" value="rectangulo" <?php echo ($figura === 'rectangulo') ? 'checked' : ''; ?>> Rectángulo
+    </label>
+    <br />
 
-            <?php if ($figura === 'circulo') : ?>
-                <label for="radio">Radio</label>
-                <input type="text" id="radio" name="radio" />
-            <?php elseif ($figura === 'cuadrado') : ?>
-                <label for="lado">Lado</label>
-                <input type="text" id="lado" name="lado" />
-            <?php elseif ($figura === 'triangulo' || $figura === 'rectangulo') : ?>
-                <label for="base">Base</label>
-                <input type="text" id="base" name="base" />
-                <br />
-                <label for="altura">Altura</label>
-                <input type="text" id="altura" name="altura" />
-            <?php endif; ?>
+    <?php if ($figura === 'circulo') : ?>
+        <label for="radio">Radio</label>
+        <input type="text" id="radio" name="radio" />
+    <?php elseif ($figura === 'cuadrado') : ?>
+        <label for="lado">Lado</label>
+        <input type="text" id="lado" name="lado" />
+    <?php elseif ($figura === 'triangulo' || $figura === 'rectangulo') : ?>
+        <label for="base">Base</label>
+        <input type="text" id="base" name="base" />
+        <br />
+        <label for="altura">Altura</label>
+        <input type="text" id="altura" name="altura" />
+    <?php endif; ?>
 
-            <br />
-            <input type="submit" class="btn_enviar">
-            <?php
-            if (isset($_SESSION['resultado'])) {
-                echo 'El resultado es ' . $_SESSION['resultado'];
-                unset($_SESSION['resultado']);
-            }
-            ?>
-            <a href="../index.html" class="btn">Volver</a>
-        </form>
+    <br />
+    <input type="submit" class="btn_enviar">
+    <?php
+    if (isset($_SESSION['resultado'])) {
+        echo 'El resultado es ' . $_SESSION['resultado'];
+        unset($_SESSION['resultado']);
+    }
+    ?>
+    <a href="../index.html" class="btn">Volver</a>
+</form>
     </div>
 </body>
 
