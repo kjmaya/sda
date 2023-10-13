@@ -25,19 +25,24 @@
             $suma_notas += $nota;
         }
         
-        $promedio = $suma_notas / $cantidad_notas;
-        $nota_aprobacion = $promedio + 0.5;
-        
-        echo "Promedio de {$materia}: {$promedio}<br>";
-        
-        if ($promedio >= $nota_aprobacion) {
-            echo "¡Felicidades! Has aprobado la materia.";
-        } else {
-            echo "Lo siento, no has aprobado la materia.";
-        }
+            $promedio = $suma_notas / $cantidad_notas;
+            $nota_aprobacion = min($promedio + 0.5, $rango_max);
+
+            echo "Promedio: {$promedio}<br>";
+            echo "Nota de Aprobación: {$nota_aprobacion}<br>";
+
+            echo "Promedio de {$materia}: {$promedio}<br>";
+
+            if ($promedio >= $nota_aprobacion) {
+                echo "¡Felicidades! Has aprobado la materia.";
+            } else {
+                echo "Lo siento, no has aprobado la materia.";
+            }
+
     }
     ?>
-    <a href="Ejercicio3.php"class="btn">Volver</a>
+    <a href="Ejercicio3.php" class="btn">Volver</a>
 </body>
 </html>
+
 
