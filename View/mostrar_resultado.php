@@ -25,16 +25,27 @@
         }
 
         // Calcular el promedio
-        $promedio = $suma_notas / $cantidad_notas;
-        
-        // Mostrar el resultado
-        echo "Materia: {$materia}<br>";
-        echo "Promedio actual: {$promedio}<br>";
-        
-        // Verificar si el estudiante aprobó o no
-        if ($promedio >= 6) { // Cambia este valor según tus criterios de aprobación
+        $promedio_original = $suma_notas / $cantidad_notas;
+
+        // Obtener los rangos de aprobación según los datos ingresados
+        $rango_min = $_POST['rango_min'];
+        $rango_max = $_POST['rango_max'];
+
+        // Calcular el resultado de la suma de los rangos divididos por 2
+        $resultado_esperado = ($rango_min + $rango_max) / 2 + 0.5;
+
+        // Mostrar los valores para verificar
+        echo "Promedio original: {$promedio_original}<br>";
+        echo "Resultado esperado: {$resultado_esperado}<br>";
+
+        // Verificar si el estudiante aprueba o reprueba
+        if ($promedio_original >= $resultado_esperado) {
+            echo "Materia: {$materia}<br>";
+            echo "Promedio actual: {$promedio_original}<br>";
             echo "¡Felicidades! Has aprobado la materia.";
         } else {
+            echo "Materia: {$materia}<br>";
+            echo "Promedio actual: {$promedio_original}<br>";
             echo "Lo siento, no has aprobado la materia.";
         }
     }
