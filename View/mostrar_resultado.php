@@ -37,7 +37,7 @@
         }
     }
     ?>
-       <a href="Ejercicio3.php" class="btn">Volver</a>
+    <a href="Ejercicio3.php"class="btn">Volver</a>
 </body>
-
 </html>
+
