@@ -62,7 +62,9 @@
 .btn:hover {
     background-color: #ae00da;
 }
-
+.btn:active {
+    background-color: #64007d;
+}
 .btn_enviar {
     margin-top: 10px;
     padding: 10px 20px;
@@ -74,11 +76,11 @@
 }
 
 .btn_enviar:hover {
-    background-color: #7809ff;
+    background-color: #ae00da;
 }
 
 .btn_enviar:active {
-    background-color: #3e8e41;
+    background-color: #64007d;
 }
 
 body {
