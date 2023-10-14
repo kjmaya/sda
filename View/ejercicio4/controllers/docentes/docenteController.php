@@ -18,9 +18,9 @@ class DocenteController extends EntityController
         if ($resultSQL->num_rows > 0) {
             while ($item = $resultSQL->fetch_assoc()) {
                 $docente = new Docente();
-                $docente->set('codigo', $item['codigo']);
+                $docente->set('cod', $item['cod']);
                 $docente->set('nombre', $item['nombre']);
-                $docente->set('curso', $item['curso']);
+                $docente->set('idOcupacion', $item['idOcupacion']);
                 array_push($lista, $docente);
             }
         }
@@ -35,9 +35,9 @@ class DocenteController extends EntityController
         if ($resultSQL->num_rows > 0) {
             while ($item = $resultSQL->fetch_assoc()) {
                 $docente = new Docente();
-                $docente->set('codigo', $item['codigo']);
+                $docente->set('cod', $item['cod']);
                 $docente->set('nombre', $item['nombre']);
-                $docente->set('curso', $item['curso']);
+                $docente->set('idOcupacion', $item['idOcupacion']);
                 break;
             }
         }
@@ -46,14 +46,14 @@ class DocenteController extends EntityController
 
     function addItem($docente)
     {
-        $codigo = $docente->get('codigo');
+        $codigo = $docente->get('cod');
         $nombre = $docente->get('nombre');
-        $email = $docente->get('curso');
+        $idOcupacion = $docente->get('idOcupacion');
         $registro = $this->getItem($codigo);
         if (isset($registro)) {
             return "El código ya existe";
         }
-        $sql = "Insert into ". $this->dataTable . " (codigo,nombre)value ('$codigo','$nombre')";
+        $sql = "Insert into ". $this->dataTable . " (cod,nombre,idOcupacion)value ('$codigo','$nombre', '$idOcupacion')";
         $resultSQL = $this->execSql($sql);
         if (!$resultSQL) {
             return "no se guardo";
@@ -63,9 +63,9 @@ class DocenteController extends EntityController
 
     function updateItem($docente)
     {
-        $codigo = $docente->get('codigo');
+        $codigo = $docente->get('cod');
         $nombre = $docente->get('nombre');
-        $email = $docente->get('curso');
+        $idOcupacion = $docente->get('idOcupacion');
         $registro = $this->getItem($codigo);
         if (!isset($registro)) {
             return "El registro no existe";
