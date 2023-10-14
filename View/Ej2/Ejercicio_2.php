@@ -91,7 +91,7 @@ function validarNumero($valor)
         unset($_SESSION['resultado']);
     }
     ?>
-    <a href="../index.html" class="btn_enviar">Volver</a>
+    <a href="../../index.html" class="btn_enviar">Volver</a>
 </form>
     </div>
 </body>
