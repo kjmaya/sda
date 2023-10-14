@@ -25,7 +25,7 @@ $lista = $docenteController->allData();
             <tr>
                 <th>Código</th>
                 <th>Nombre</th>
-                <th></th>
+                <th>Curso</th>
                 <th></th>
             </tr>
         </thead>
@@ -35,11 +35,11 @@ $lista = $docenteController->allData();
                 echo '<tr>';
                 echo '  <td>' . $docente->get('codigo') . '</td>';
                 echo '  <td>' . $docente->get('nombre') . '</td>';
-                echo '  <td>'; 
-                echo '      <a href="views/formularioDocente.php?operacion=update&codigo=' . $estudiante->get('codigo') . '">Modificar</a>';
+                echo '  <td>'. $docente->get('curso') . '</td>';; 
+                echo '      <a href="views/formularioDocente.php?operacion=update&codigo=' . $docente->get('codigo') . '">Modificar</a>';
                 echo '  </td>';
                 echo '  <td>'; 
-                echo '      <a href="views/confirmarEliminacion.php?codigo=' . $estudiante->get('codigo') . '">Eliminar</a>';
+                echo '      <a href="views/confirmarEliminacion.php?codigo=' . $docente->get('codigo') . '">Eliminar</a>';
                 echo '  </td>';
                 echo '</tr>';
             }

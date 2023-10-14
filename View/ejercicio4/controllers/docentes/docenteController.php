@@ -9,6 +9,7 @@ class DocenteController extends EntityController
 {
 
     private $dataTable = 'docentes';
+
     function allData()
     {
         $sql = "select * from ".$this->dataTable;
@@ -19,6 +20,7 @@ class DocenteController extends EntityController
                 $docente = new Docente();
                 $docente->set('codigo', $item['codigo']);
                 $docente->set('nombre', $item['nombre']);
+                $docente->set('curso', $item['curso']);
                 array_push($lista, $docente);
             }
         }
@@ -35,7 +37,7 @@ class DocenteController extends EntityController
                 $docente = new Docente();
                 $docente->set('codigo', $item['codigo']);
                 $docente->set('nombre', $item['nombre']);
-                $docente->set('email', $item['email']);
+                $docente->set('curso', $item['curso']);
                 break;
             }
         }
@@ -46,7 +48,7 @@ class DocenteController extends EntityController
     {
         $codigo = $docente->get('codigo');
         $nombre = $docente->get('nombre');
-        $email = $docente->get('email');
+        $email = $docente->get('curso');
         $registro = $this->getItem($codigo);
         if (isset($registro)) {
             return "El código ya existe";
@@ -63,7 +65,7 @@ class DocenteController extends EntityController
     {
         $codigo = $docente->get('codigo');
         $nombre = $docente->get('nombre');
-        $email = $docente->get('email');
+        $email = $docente->get('curso');
         $registro = $this->getItem($codigo);
         if (!isset($registro)) {
             return "El registro no existe";
