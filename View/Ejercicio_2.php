@@ -84,14 +84,14 @@ function validarNumero($valor)
     <?php endif; ?>
 
     <br />
-    <input type="submit" class="btn_enviar">
+    <input type="submit" class="btn">
     <?php
     if (isset($_SESSION['resultado'])) {
         echo 'El resultado es ' . $_SESSION['resultado'];
         unset($_SESSION['resultado']);
     }
     ?>
-    <a href="../index.html" class="btn">Volver</a>
+    <a href="../index.html" class="btn_enviar">Volver</a>
 </form>
     </div>
 </body>

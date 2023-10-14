@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Generar Campos</title>
-    <link rel="stylesheet" href="prom.css">
-</head>
+    <link rel="stylesheet" href="Ejer3.css"> 
 <body>
-    <form class="card" method="post" action="mostrar_resultado.php">
+    <form class="container card" method="post" action="mostrar_resultado.php">
         <?php
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $materia = $_POST['materia'];
@@ -23,7 +22,7 @@
             echo "<input type='hidden' name='cantidad_notas' value='$cantidad_notas'>";
             echo "<input type='hidden' name='rango_min' value='$rango_min'>";
             echo "<input type='hidden' name='rango_max' value='$rango_max'>";
-            echo "<input type='submit' value='Calcular'>";
+            echo "<input type='submit' value='Calcular' class='btn_enviar'>";
         }
         ?>
     </form>
