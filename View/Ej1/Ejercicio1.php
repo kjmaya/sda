@@ -33,7 +33,7 @@
         sort($listaImpares);
         echo " Lista de números impares ordenada de menor a mayor:\n " . implode(", ", $listaImpares) . '<br>';
         ?>
-        <a href="../index.html" class="btn">Volver</a>
+            <a href="../../index.html" class="btn">Volver</a>
     </div>
 </body>
 </html>

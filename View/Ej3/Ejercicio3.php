@@ -22,7 +22,7 @@
             
             <input type="submit" value="Siguiente" class="btn_enviar">
         </form>
-        <a href="../index.html" class="btn">Volver</a>
+        <a href="../../index.html" class="btn">Volver</a>
     </div>
 </body>
 </html>
