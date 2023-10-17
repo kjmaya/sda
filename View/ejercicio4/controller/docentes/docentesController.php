@@ -80,7 +80,7 @@ class DocentesController extends EntityController
         return "Docente agregado con éxito, ID: $nuevoCodigo";
     }
 
-    function updateItem($docente)
+    function updateItem($estudiante)
     {
     }
 
