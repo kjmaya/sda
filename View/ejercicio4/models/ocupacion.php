@@ -1,12 +1,11 @@
 <?php
 
-namespace App\models;
+namespace taller4\models;
 
-class Docente{
-    private $codigo;
+class Ocupacion{
+    private $id;
     private $nombre;
-    private $curso;
-
+    
     function get($prop){
         return $this->$prop;
     }
@@ -15,3 +14,4 @@ class Docente{
         $this->$prop = $value;
     }
 }
+?>

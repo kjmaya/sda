@@ -1,5 +1,5 @@
 <?php
-namespace App\controllers\database;
+namespace taller4\controllers\database;
 
 use mysqli;
 

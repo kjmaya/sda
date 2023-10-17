@@ -1,7 +1,7 @@
 <?php
-namespace App\controllers;
+namespace taller4\controllers;
 
-use App\controllers\database\DatabaseController;
+use taller4\controllers\database\DatabaseController;
 
 abstract class EntityController{
    public abstract function allData();
