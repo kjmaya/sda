@@ -1,26 +1,40 @@
 <?php
 
-namespace App\controllers\docentes;
+namespace taller4\controllers\docente;
 
-use App\controllers\EntityController;
-use App\models\Docente;
+include __DIR__ . ('/../ocupacion/ocupacionController.php');
 
-class DocenteController extends EntityController
+
+use taller4\controllers\EntityController;
+use taller4\controllers\ocupaciones\ocupacionController;
+use taller4\models\Docentes;
+
+
+class DocentesController extends EntityController
 {
 
-    private $dataTable = 'docentes';
-
+    private $dataTable = 'Docentes';
     function allData()
     {
-        $sql = "select * from ".$this->dataTable;
+        $sql = "select * from " . $this->dataTable;
         $resultSQL = $this->execSql($sql);
         $lista = [];
         if ($resultSQL->num_rows > 0) {
             while ($item = $resultSQL->fetch_assoc()) {
-                $docente = new Docente();
-                $docente->set('codigo', $item['codigo']);
+                $docente = new Docentes();
+                $docente->set('codigo', $item['cod']);
                 $docente->set('nombre', $item['nombre']);
-                $docente->set('curso', $item['curso']);
+                $codOcu = $item['idOcupacion'];
+                $ocupacionController = new ocupacionController();
+                $ocupacion = $ocupacionController->getItem($codOcu);
+
+                if ($ocupacion !== null) {
+                    $nombreDeLaOcupacion = $ocupacion->get('nombre');
+                    $docente->set('nombreOcupacion', $nombreDeLaOcupacion);
+                } else {
+                    echo "no existe";
+                }
+
                 array_push($lista, $docente);
             }
         }
@@ -29,66 +43,48 @@ class DocenteController extends EntityController
 
     function getItem($codigo)
     {
-        $sql = "select * from ".$this->dataTable . " where codigo=" . $codigo;
+        $sql = "select * from " . $this->dataTable . " where codigo=" . $codigo;
         $resultSQL = $this->execSql($sql);
         $docente = null;
         if ($resultSQL->num_rows > 0) {
             while ($item = $resultSQL->fetch_assoc()) {
-                $docente = new Docente();
-                $docente->set('codigo', $item['codigo']);
+                $docente = new Docentes();
+                $docente->set('codigo', $item['cod']);
                 $docente->set('nombre', $item['nombre']);
-                $docente->set('curso', $item['curso']);
+                $codOcu = $item['idOcupacion'];
+                $ocupacionController = new ocupacionController();
+                $ocupacion = $ocupacionController->getItem($codOcu);
+
+                if ($ocupacion !== null) {
+                    $nombreDeLaOcupacion = $ocupacion->get('nombre');
+                    $docente->set('nombreOcupacion', $nombreDeLaOcupacion);
+                } else {
+                    echo "no existe";
+                }
                 break;
             }
         }
         return $docente;
     }
 
+
     function addItem($docente)
     {
-        $codigo = $docente->get('codigo');
-        $nombre = $docente->get('nombre');
-        $email = $docente->get('curso');
-        $registro = $this->getItem($codigo);
-        if (isset($registro)) {
-            return "El código ya existe";
-        }
-        $sql = "Insert into ". $this->dataTable . " (codigo,nombre)value ('$codigo','$nombre')";
-        $resultSQL = $this->execSql($sql);
-        if (!$resultSQL) {
-            return "no se guardo";
-        }
-        return "se guardo con exito";
+        $nombreDocente = $docente->get('nombre');
+        $ultimoDocente = $this->allData()[count($this->allData()) - 1];
+        $ultimoCodigo = (int)$ultimoDocente->get('codigo');
+        $nuevoCodigo = $ultimoCodigo + 1;
+        $docente = new Docentes();
+        $docente->set('codigo', $nuevoCodigo);
+        $docente->set('nombre', $nombreDocente);
+        return "Docente agregado con éxito, ID: $nuevoCodigo";
     }
 
-    function updateItem($docente)
+    function updateItem($estudiante)
     {
-        $codigo = $docente->get('codigo');
-        $nombre = $docente->get('nombre');
-        $email = $docente->get('curso');
-        $registro = $this->getItem($codigo);
-        if (!isset($registro)) {
-            return "El registro no existe";
-        }
-        $sql = "update" . $this->dataTable . " set ";
-        $sql .= "nombre='$nombre',";
-        $sql .= " where codigo=$codigo";
-
-        $resultSQL = $this->execSql($sql);
-        if (!$resultSQL) {
-            return "no se guardo";
-        }
-        return "se guardo con exito";
     }
 
     function deleteItem($codigo)
     {
-        $sql = "delete from ".$this->dataTable;
-        $sql .= " where codigo=$codigo";
-        $resultSQL = $this ->execSql($sql);
-        if ($resultSQL ){
-            return "registro eliminado";
-        }
-        return " No se pudo elieminar el registro";
     }
 }
