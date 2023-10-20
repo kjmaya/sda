@@ -21,6 +21,7 @@ $lista = $docentesController->allData();
 <body>
     <h1>Lista de docentes</h1>
     <a href="aggelementos.php">Registrar</a>
+    <a href="../../../index.html">Volver</a>
     <table>
         <thead>
             <tr>
