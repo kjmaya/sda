@@ -24,6 +24,10 @@
 
 <?php
 
+include __DIR__ . '/../controller/database/databasecController.php';
+include __DIR__ . '/../controller/entityController.php';
+include __DIR__ . '/../controller/ocupacion/ocupacionController.php';
+//use taller4\controllers\ocupaciones\ocupacionController;
 use taller4\controllers\ocupaciones\ocupacionController;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -35,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo '<input type="text" name="nombre_docente">';
         echo '<label for="ocupacion">Ocupación:</label>';
         echo '<select name="id_ocupacion">';
-        $ocupacionController = new ocupacionController();
+        $ocupacionController = new ocupacionController(); 
         $ocupaciones = $ocupacionController->allData();
         foreach ($ocupaciones as $ocupacion) {
             echo "<option value='" . $ocupacion->get('codigo') . "'>" . $ocupacion->get('nombre') . "</option>";

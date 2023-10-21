@@ -9,11 +9,10 @@ use taller4\controllers\EntityController;
 use taller4\controllers\ocupaciones\ocupacionController;
 use taller4\models\Docentes;
 
-
 class DocentesController extends EntityController
 {
 
-    private $dataTable = 'Docentes';
+    private $dataTable = 'docentes';
     function allData()
     {
         $sql = "select * from " . $this->dataTable;
@@ -86,5 +85,12 @@ class DocentesController extends EntityController
 
     function deleteItem($codigo)
     {
+        $sql = "delete from ".$this->dataTable;
+        $sql .= " where cod=$codigo";
+        $resultSQL = $this ->execSql($sql);
+        if ($resultSQL ){
+            return "registro eliminado";
+        }
+        return " No se pudo elieminar el registro";
     }
 }
