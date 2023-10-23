@@ -9,7 +9,10 @@
 
 <body>
 <?php
-
+include __DIR__ . '/../controller/database/databasecController.php';
+include __DIR__ . '/../controller/entityController.php';
+include __DIR__ . '/../controller/ocupacion/ocupacionController.php';
+include __DIR__ . '/../controller/docentes/docentesController.php';
 use taller4\controllers\docente\DocentesController;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -18,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "El nombre del docente no puede estar vacío.";
     } else {
         $docentesController = new DocentesController();
-         $mensaje = $docentesController->addItem($nombreDocente);
+        $mensaje = $docentesController->addItem($nombreDocente);
         echo $mensaje;
     }
 }
