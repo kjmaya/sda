@@ -13,7 +13,7 @@ class ocupacionController extends EntityController
         $sql = "select * from " . $this->dataTable;
         $resultSQL = $this->execSql($sql);
         $ocupaciones = [];
-    
+
         if ($resultSQL->num_rows > 0) {
             while ($item = $resultSQL->fetch_assoc()) {
                 $ocupacion = new Ocupacion();
@@ -22,10 +22,9 @@ class ocupacionController extends EntityController
                 $ocupaciones[] = $ocupacion;
             }
         }   
-    
+
         return $ocupaciones;
     }
-    
 
     function getItem($codigo)
     {

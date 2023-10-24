@@ -31,7 +31,6 @@ $lista = $docentesController->allData();
                 <th>Cursos</th>
                 <th></th>
                 <th></th>
-                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -41,9 +40,6 @@ $lista = $docentesController->allData();
                 echo '  <td>' . $docentes->get('codigo') . '</td>';
                 echo '  <td>' . $docentes->get('nombre') . '</td>';
                 echo '  <td>' . $docentes->get('nombreOcupacion') . '</td>';
-                echo '  <td>';
-                echo '      <a href="">cursos</a>';
-                echo '  </td>';
                 echo '  <td>';
                 echo '      <a href="views/formularioEstudiante.php?operacion=update&codigo=' . $docentes->get('codigo') . '">Modificar</a>';
                 echo '  </td>';
