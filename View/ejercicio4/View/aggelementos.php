@@ -57,5 +57,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo '<input type="submit" value="Agregar Curso">';
         echo '</form>';
     }
+    echo '</select>';
+    echo '<input type="submit" value="Agregar Docente">';
+    echo '</form>';
+} elseif ($seleccion === 'curso') {
 }
 ?>
