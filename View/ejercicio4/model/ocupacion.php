@@ -1,6 +1,6 @@
 <?php
 
-namespace taller4\models;
+namespace taller4\model;
 
 class Ocupacion{
     private $id;

@@ -1,25 +1,20 @@
 <?php
+include __DIR__ . '/../controller/database/databasecController.php'; 
 include __DIR__ . '/../model/Docentes.php';
 include __DIR__ . '/../controller/entityController.php';
-include __DIR__ . '/../controller/database/databasecController.php';
+include __DIR__ . '/../controller/ocupacion/ocupacionController.php';
 include __DIR__ . '/../controller/docentes/docentesController.php';
-use taller4\models\Docentes;
+
 use taller4\controllers\docente\DocentesController;
 
-$operacion= $_POST['operacion'];
-$resultado = '';
-$docentecontroller = new DocentesController();
 
-if($operacion=='delete'){
-    $resultado = $docentecontroller-> deleteItem($_POST['codigo']);
-}else{
-    $docente = new Docentes();
-    $docente->set('codigo',$_POST['cod']);
-    $docente->set('nombre', $_POST['nombre']);
-    $docente->set('ocupacion', $_POST['idOcupacion']);
-    $resultado = $operacion=='update'
-        ? $docentecontroller->updateItem($docente)
-        : $docentecontroller->addItem($docente);
+$operacion=$_POST['operacion'];
+$resultado = '';
+$docentescontroller = new DocentesController();
+if($operacion =='delete'){
+    $resultado = $docentescontroller->deleteItem($_POST['codigo']);
+}elseif( $resultado = $operacion=='update'){
+    $estudianteController->updateItem($estudiante);
 }
 ?>
 <!DOCTYPE html>
@@ -33,6 +28,6 @@ if($operacion=='delete'){
     <?php
     echo $resultado;
     ?>
-    <a href="docentes.php">Ir al inicio</a>
+    <a href="../View/docentes.php">Ir al inicio</a>
 </body>
 </html>

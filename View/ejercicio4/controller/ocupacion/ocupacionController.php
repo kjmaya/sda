@@ -1,11 +1,8 @@
 <?php
-
 namespace taller4\controllers\ocupaciones;
-
-include __DIR__ . ('/../../model/ocupacion.php');
-
+include __DIR__ . '/../../model/ocupacion.php';
 use taller4\controllers\EntityController;
-use taller4\models\Ocupacion;
+use taller4\model\Ocupacion;
 
 class ocupacionController extends EntityController
 {
@@ -20,7 +17,7 @@ class ocupacionController extends EntityController
         if ($resultSQL->num_rows > 0) {
             while ($item = $resultSQL->fetch_assoc()) {
                 $ocupacion = new Ocupacion();
-                $ocupacion->set('codigo', $item['id']);
+                $ocupacion->set('id', $item['id']);
                 $ocupacion->set('nombre', $item['nombre']);
                 $ocupaciones[] = $ocupacion;
             }
@@ -45,11 +42,11 @@ class ocupacionController extends EntityController
         return $ocupacion;
     }
 
-    function addItem($estudiante)
+    function addItem($codigo,$ocupacion,$id)
     {
     }
 
-    function updateItem($estudiante)
+    function updateItem($ocupacion)
     {
     }
 

@@ -2,9 +2,6 @@
 
 namespace taller4\controllers\docente;
 
-include __DIR__ . ('/../ocupacion/ocupacionController.php');
-
-
 use taller4\controllers\EntityController;
 use taller4\controllers\ocupaciones\ocupacionController;
 use taller4\models\Docentes;
@@ -66,31 +63,31 @@ class DocentesController extends EntityController
         return $docente;
     }
 
-
-    function addItem($docente)
+    function addItem($codigo, $docentenom, $id_ocupacion)
     {
-        $nombreDocente = $docente->get('nombre');
-        $ultimoDocente = $this->allData()[count($this->allData()) - 1];
-        $ultimoCodigo = (int)$ultimoDocente->get('codigo');
-        $nuevoCodigo = $ultimoCodigo + 1;
-        $docente = new Docentes();
-        $docente->set('codigo', $nuevoCodigo);
-        $docente->set('nombre', $nombreDocente);
-        return "Docente agregado con éxito, ID: $nuevoCodigo";
+        $sql = "INSERT INTO docentes (cod,nombre, idOcupacion) VALUES ('$codigo','$docentenom', $id_ocupacion)";
+        echo '<a href="docentes.php">Volver</a>';
+        $resultSQL = $this->execSql($sql);
+        if ($resultSQL) {
+            return "Docente agregado con éxito";
+        } else {
+            return "Error al agregar docente";
+        }
     }
 
-    function updateItem($estudiante)
+    function updateItem($docente)
     {
     }
 
     function deleteItem($codigo)
     {
-        $sql = "delete from ".$this->dataTable;
-        $sql .= " where cod=$codigo";
-        $resultSQL = $this ->execSql($sql);
-        if ($resultSQL ){
-            return "registro eliminado";
+        $sql = "DELETE FROM " .$this->dataTable. " WHERE cod = '$codigo'";
+        $resultSQL = $this->execSql($sql);
+
+        if ($resultSQL) {
+            return "Docente eliminado con éxito";
+        } else {
+            return "Error al eliminar docente";
         }
-        return " No se pudo elieminar el registro";
     }
 }
