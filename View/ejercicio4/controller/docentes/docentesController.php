@@ -39,7 +39,7 @@ class DocentesController extends EntityController
 
     function getItem($codigo)
     {
-        $sql = "select * from " . $this->dataTable . " where codigo=" . $codigo;
+        $sql = "select * from " . $this->dataTable . " where cod=" . $codigo;
         $resultSQL = $this->execSql($sql);
         $docente = null;
         if ($resultSQL->num_rows > 0) {
@@ -77,6 +77,7 @@ class DocentesController extends EntityController
 
     function updateItem($docente)
     {
+        
     }
 
     function deleteItem($codigo)

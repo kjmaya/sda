@@ -4,10 +4,12 @@ include __DIR__ . '/../controller/entityController.php';
 include __DIR__ . '/../controller/database/databasecController.php';
 include __DIR__ . '/../controller/docentes/docentesController.php';
 include __DIR__ . '/../controller/ocupacion/ocupacionController.php';
-use taller4\controllers\docente\DocentesController;
+include __DIR__ . '/../controller/cursos/cursosContoller.php';
+include __DIR__ . '/../model/Cursos.php';
+use taller4\controllers\curso\CursosController;
 
-$docentesController = new DocentesController();
-$lista = $docentesController->allData();
+$cursoscontroller = new CursosController();
+$lista = $cursoscontroller->allData();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,33 +21,31 @@ $lista = $docentesController->allData();
 </head>
 
 <body>
-    <h1>Lista de docentes</h1>
+    <h1>Lista de cursos</h1>
     <a href="aggelementos.php">Registrar</a>
-    <a href="../../../index.html">Volver</a>
-    <a href="cursos.php">cursos</a>
+    <a href="docentes.php">Volver</a>
     <table>
         <thead>
             <tr>
                 <th>Código</th>
                 <th>Nombre</th>
-                <th>Ocupación</th>
-                <th>Cursos</th>
+                <th>Docentes</th>
                 <th></th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
             <?php
-            foreach ($lista as $docentes) {
+            foreach ($lista as $cursos) {
                 echo '<tr>';
-                echo '  <td>' . $docentes->get('codigo') . '</td>';
-                echo '  <td>' . $docentes->get('nombre') . '</td>';
-                echo '  <td>' . $docentes->get('nombreOcupacion') . '</td>';
+                echo '  <td>' . $cursos->get('codigo') . '</td>';
+                echo '  <td>' . $cursos->get('nombre') . '</td>';
+                echo '  <td>' . $cursos->get('codDocente') . '</td>';
                 echo '  <td>';
-                echo '      <a href="views/formularioEstudiante.php?operacion=update&codigo=' . $docentes->get('codigo') . '">Modificar</a>';
+                echo '      <a href="views/aggElementos.php?operacion=update&codigo=' . $cursos->get('codigo') . '">Modificar</a>';
                 echo '  </td>';
                 echo '  <td>';
-                echo '      <a href="confirmarEliminacion.php?codigo=' . $docentes->get('codigo') . '">Eliminar</a>';
+                echo '      <a href="confirmarcursoseli.php?codigo=' . $cursos->get('codigo') . '">Eliminar</a>';
                 echo '  </td>';
                 echo '</tr>';
             }

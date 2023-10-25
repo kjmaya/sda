@@ -25,15 +25,18 @@
 include __DIR__ . '/../controller/database/databasecController.php';
 include __DIR__ . '/../controller/entityController.php';
 include __DIR__ . '/../controller/ocupacion/ocupacionController.php';
-
+include __DIR__ . '/../controller/docentes/docentesController.php';
+include __DIR__ . '/../model/Docentes.php';
 //use taller4\controllers\ocupaciones\ocupacionController;
+
+use taller4\controllers\docente\DocentesController;
 use taller4\controllers\ocupaciones\ocupacionController;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $seleccion = $_POST['seleccion'];
 
     if ($seleccion === 'docente') {
-        echo '<form method="post" action="procesarDo.php">';
+        echo '<form method="post" action="procesar.php">';
         echo '<label>codigo del docente:</label>';
         echo '<input type="text" name="codigo" required>';
         echo '<label>Nombre del docente:</label>';
@@ -50,11 +53,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo '<input type="submit" value="Agregar Docente">';
         echo '</form>';
     }elseif ($seleccion === 'curso') {
-        echo '<form method="post" action="procesarDo.php">';
+        echo '<form method="post" action="procesar.php">';
+        echo '<label>codigo del curso:</label>';
+        echo '<input type="text" name="codigo" required>';
         echo '<label>Nombre del curso:</label>';
         echo '<input type="hidden" name="seleccion" value="curso">';
-        echo '<input type="text" name="nombre_curso">';
-        echo '<input type="submit" value="Agregar Curso">';
+        echo '<input type="text" name="nombre" required>';
+        echo '<select name="codDocentes">';
+        $docentecontroller = new DocentesController(); 
+        $docentes = $docentecontroller->allData();
+        foreach ($docentes as $docente) {
+            echo "<option value='" . $cod=$docente->get('codigo') . "'>" . $docente->get('nombre') . "</option>";
+        }
+        echo '</select>';
+        echo '<input type="submit" value="Agregar curso ">';
         echo '</form>';
     }
 }

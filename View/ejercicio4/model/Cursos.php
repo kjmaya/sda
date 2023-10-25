@@ -2,10 +2,10 @@
 
 namespace taller4\models;
 
-class Docentes{
-    private $cod;
+class Cursos{
+    private $codigo;
     private $nombre;
-    private $ocupacion; 
+    private $codDocente; 
 
     function get($prop){
         return $this->$prop;
