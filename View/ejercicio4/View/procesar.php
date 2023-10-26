@@ -8,7 +8,19 @@ include __DIR__ . '/../model/Docentes.php';
 
 use taller4\controllers\curso\CursosController;
 use taller4\controllers\docente\DocentesController;
-
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/styles4.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card">
+    <?php
+    
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $seleccion = $_POST['seleccion'];
 
@@ -26,4 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mensaje = $cursoscontroller->addItem($codigo,$nombre, $codDocentes);
     }
 }
-?>
+    ?>
+    </div>
+</body>
+</html>

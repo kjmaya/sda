@@ -1,35 +1,38 @@
 body {
+    background: url('https://i.pinimg.com/564x/29/ea/68/29ea68ac63d8b560e8a663d22534abe8.jpg') center/cover no-repeat;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
-    font-family: Arial, sans-serif;
     display: flex;
+    height: 100vh;
+    overflow: hidden;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
 }
 
 .card {
-    background-color: #ffffff;
     padding: 30px;
     border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     max-width: 800px;
+    margin: 20px auto;
     text-align: center;
-    border: 2px solid #ffd728; /* Yellow border */
+    border: 2px solid #ffffff;
+    position: relative;
 }
 
 .card h1 {
-    color: #ffd728;
+    color: #930680;
     font-size: 24px;
     margin-bottom: 15px;
 }
 
 .btn {
-    padding: 15px 30px;
-    background-color: #ffd728;
+    padding: 18px 30px;
+    background-color: #fe00fe;
     color: #fff;
     text-decoration: none;
-    border-radius: 25px;
+    border-radius: 5px;
     border: 0px;
     transition: background-color 0.3s ease-in-out;
     font-weight: bold;
@@ -40,10 +43,11 @@ body {
 .btn:hover {
     background-color: #ae00da;
 }
+
 .btn_enviar {
     margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #ff954a;
+    padding: 17px 24px;
+    background-color: #b89db4;
     color: white;
     border: none;
     border-radius: 5px;
@@ -53,8 +57,4 @@ body {
 
 .btn_enviar:hover {
     background-color: #7809ff;
-}
-
-.btn_enviar:active {
-    background-color: #3e8e41;
 }

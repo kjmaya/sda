@@ -1,7 +1,6 @@
-/* Estilos para el cuerpo de la página */
 body {
     font-family: Arial, sans-serif;
-    background: url('https://i.pinimg.com/736x/0a/3d/36/0a3d3605454833b136028f89115c9340.jpg') center/cover no-repeat; /* Reemplaza 'tu-imagen-de-fondo.jpg' con la URL de tu imagen de fondo */
+    background: url('https://i.pinimg.com/564x/29/ea/68/29ea68ac63d8b560e8a663d22534abe8.jpg') center/cover no-repeat;
     margin: 0;
     padding: 0;
     display: flex;
@@ -12,9 +11,12 @@ body {
 
 /* Estilos para el menú */
 #menu {
-    background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+    background: rgba(0, 0, 0, 0.7);
     padding: 20px;
     text-align: center;
+    border-radius: 10px;
+    /* Agrega bordes redondeados para dar el aspecto de tarjeta */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #menu ul {
@@ -35,7 +37,7 @@ body {
 
 #menu ul a {
     text-decoration: none;
-    color: #fff; /* Color de texto principal */
+    color: #fff;
     padding: 10px 20px;
     font-weight: bold;
     text-transform: uppercase;
@@ -44,18 +46,18 @@ body {
 }
 
 #menu ul a:hover {
-    color: #d4ff00; /* Color de texto al pasar el cursor */
+    color: #9900ff;
 }
 
 /* Estilos para los submenús desplegables */
 #menu ul ul {
     display: none;
     position: absolute;
-    background: #fff;
+    background: #333;
     top: 100%;
     left: 0;
     width: 200px;
-    border-radius: 0 0 10px 10px; /* Bordes redondeados en la parte inferior */
+    border-radius: 0 0 10px 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1;
 }
@@ -67,10 +69,10 @@ body {
 
 #menu ul ul a {
     padding: 10px 20px;
-    color: #333; /* Color de texto principal */
+    color: #fff;
 }
 
-#menu ul li:hover > ul {
+#menu ul li:hover>ul {
     display: block;
 }
 

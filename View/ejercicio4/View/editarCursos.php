@@ -30,28 +30,31 @@ if (!isset($cursos)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles4.css">
     <title>Document</title>
 </head>
 
 <body>
-    <a href="cursos.php">Volver</a>
-    <?php
-    echo '<form method="post" action="accionCursos.php">';
-    echo '<input type="hidden" name="operacion" value="' . $operacion . ' ?>">';
-    echo '<label>codigo del curso:</label>';
-    echo '<input type="text" name="codigo" required value="' . $cursos->get('codigo') . '" ' . ($operacion == 'update' ? 'readonly' : '') . '>';
-    echo '<label>Nombre del curso:</label>';
-    echo '<input type="hidden" name="seleccion" value="curso">';
-    echo '<input type="text" name="nombre" required value="' . $cursos->get('nombre') . '">';
-    echo '<select name="codDocentes">';
-    $docentes = $docentecontroller->allData();
-    foreach ($docentes as $docente) {
-        echo "<option value='" . $cod = $docente->get('codigo') . "'>" . $docente->get('nombre') . "</option>";
-    }
-    echo '</select>';
-    echo '<input type="submit" value="Agregar curso ">';
-    echo '</form>';
-    ?>
+    <div class="card">
+        <a class="link" href="cursos.php">Volver</a>
+        <?php
+        echo '<form method="post" action="accionCursos.php" class = "text">';
+        echo '<input type="hidden" name="operacion" value="' . $operacion . ' ?>">';
+        echo '<label>codigo del curso:</label>';
+        echo '<input type="text" name="codigo" required value="' . $cursos->get('codigo') . '" ' . ($operacion == 'update' ? 'readonly' : '') . '>';
+        echo '<label>Nombre del curso:</label>';
+        echo '<input type="hidden" name="seleccion" value="curso">';
+        echo '<input type="text" name="nombre" required value="' . $cursos->get('nombre') . '">';
+        echo '<select name="codDocentes" class="select-box">';
+        $docentes = $docentecontroller->allData();
+        foreach ($docentes as $docente) {
+            echo "<option value='" . $cod = $docente->get('codigo') . "'>" . $docente->get('nombre') . "</option>";
+        }
+        echo '</select>';
+        echo '<input type="submit" value="Agregar curso " class="add-button">';
+        echo '</form>';
+        ?>
+    </div>
 </body>
 
-</html> 
+</html>

@@ -66,7 +66,7 @@ class DocentesController extends EntityController
     function addItem($codigo, $docentenom, $id_ocupacion)
     {
         $sql = "INSERT INTO docentes (cod,nombre, idOcupacion) VALUES ('$codigo','$docentenom', $id_ocupacion)";
-        echo '<a href="docentes.php">Volver</a>';
+        echo '<a href="docentes.php" class="add-button">Volver</a>';
         $resultSQL = $this->execSql($sql);
         if ($resultSQL) {
             return "Docente agregado con éxito";
@@ -104,7 +104,7 @@ class DocentesController extends EntityController
         $resultSQL = $this->execSql($sql);
 
         if ($resultSQL) {
-            return "Docente eliminado con éxito";
+            return "";
         } else {
             return "Error al eliminar docente";
         }

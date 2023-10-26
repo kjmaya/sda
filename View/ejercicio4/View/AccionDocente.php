@@ -31,6 +31,7 @@ if ($operacion == 'delete') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles4.css">
     <title>Document</title>
 </head>
 
@@ -38,7 +39,10 @@ if ($operacion == 'delete') {
     <?php
     echo $resultado;
     ?>
-    <a href="../View/docentes.php">Ir al inicio</a>
+    <div class="card">
+        <a href="../View/docentes.php" class="link">Ir al inicio</a>
+        <p class="text">Se elimino el docente exitosamente </p>
+    </div>
 </body>
 
 </html>

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Generar Campos</title>
-    <link rel="stylesheet" href="Ejer3.css"> 
+    <link rel="stylesheet" href="Ejer3.css">
+
 <body>
     <form class="container card" method="post" action="mostrar_resultado.php">
         <?php
@@ -27,5 +29,5 @@
         ?>
     </form>
 </body>
-</html>
 
+</html>

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="Ejer1.css">
 </head>
+
 <body>
     <div class="card">
         <h1>Ejercicio 1</h1>
@@ -33,7 +35,8 @@
         sort($listaImpares);
         echo " Lista de números impares ordenada de menor a mayor:\n " . implode(", ", $listaImpares) . '<br>';
         ?>
-            <a href="../../index.html" class="btn">Volver</a>
+        <a href="../../index.html" class="btn">Volver</a>
     </div>
 </body>
+
 </html>

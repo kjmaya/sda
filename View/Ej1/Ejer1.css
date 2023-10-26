@@ -1,27 +1,51 @@
 body {
-    background: #ffffff;
+    background: url('https://i.pinimg.com/564x/29/ea/68/29ea68ac63d8b560e8a663d22534abe8.jpg') center/cover no-repeat;
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
 }
 
 .card {
-    background-color: #ffffff;
+    position: relative;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     max-width: 800px;
     margin: 20px auto;
     text-align: center;
-    border: 2px solid #ffd728; /* Cambia el color del borde a azul */
+    border: 2px solid #ffffff;
+    /* Cambia el color del borde a azul */
 }
 
 .card h1 {
-    color: #ffd728;
+    color: #930680;
     font-size: 24px;
     margin-bottom: 15px;
 }
 
 .card p {
-    color: #666;
+    .card {
+        padding: 10px;
+        border-radius: 15px;
+        max-width: 800px;
+        text-align: center;
+        border: 2px solid #ffffff;
+        margin: 20px auto;
+        position: absolute;
+        top: 0;
+        bottom: 20px;
+        /* Ajusta este valor según tu preferencia */
+        left: 0;
+        right: 0;
+    }
+
+    color: #ffffff;
     font-size: 16px;
     line-height: 1.5;
 }
@@ -30,7 +54,8 @@ body {
     margin-top: 10px;
     display: inline-block;
     padding: 15px 30px;
-    background-color: #ffd728; /* Cambia el color de fondo a azul */
+    background-color: #fe00fe;
+    /* Cambia el color de fondo a azul */
     color: #fff;
     text-decoration: none;
     border-radius: 25px;
@@ -39,5 +64,6 @@ body {
 }
 
 .btn:hover {
-    background-color: #ae00da; /* Cambia el color de fondo al rosado al pasar el ratón */
+    background-color: #ae00da;
+    /* Cambia el color de fondo al rosado al pasar el ratón */
 }
