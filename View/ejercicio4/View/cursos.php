@@ -42,7 +42,7 @@ $lista = $cursoscontroller->allData();
                 echo '  <td>' . $cursos->get('nombre') . '</td>';
                 echo '  <td>' . $cursos->get('codDocente') . '</td>';
                 echo '  <td>';
-                echo '      <a href="views/aggElementos.php?operacion=update&codigo=' . $cursos->get('codigo') . '">Modificar</a>';
+                echo '      <a href="editarCursos.php?operacion=update&codigo=' . $cursos->get('codigo') . '">Modificar</a>';
                 echo '  </td>';
                 echo '  <td>';
                 echo '      <a href="confirmarcursoseli.php?codigo=' . $cursos->get('codigo') . '">Eliminar</a>';

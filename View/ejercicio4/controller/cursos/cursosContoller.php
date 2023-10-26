@@ -79,6 +79,24 @@ class CursosController extends EntityController
 
     function updateItem($curso)
     {
+        $codigo = $curso->get('codigo');
+        $nombre = $curso->get('nombre');
+        $codDocente = $curso->get('codDocente');
+        $registro = $this->getItem($codigo);
+        if (!isset($registro)) {
+            return "El registro no existe";
+        }
+        $sql = "update " . $this->dataTable . " set ";
+        $sql .= "nombre='$nombre', ";
+        $sql .= "codDocente='$codDocente' ";
+        $sql .= "where cod=$codigo";
+
+
+        $resultSQL = $this->execSql($sql);
+        if (!$resultSQL) {
+            return "no se guardo";
+        }
+        return "se guardo con exito";
     }
 
     function deleteItem($codigo)
